@@ -39,6 +39,98 @@ body{
     padding:40px;
 
 }
+<section class="timeline-section">
+
+<h2>Explore Colorado History by Timeline</h2>
+
+<p class="timeline-intro">
+Navigate more than 160 years of Colorado history through film,
+photography, transportation, mining, landscapes, and communities.
+</p>
+
+<div class="timeline-years">
+
+<button class="year-btn active">1860s</button>
+<button class="year-btn">1870s</button>
+<button class="year-btn">1880s</button>
+<button class="year-btn">1890s</button>
+<button class="year-btn">1900s</button>
+<button class="year-btn">1910s</button>
+<button class="year-btn">1920s</button>
+<button class="year-btn">1930s</button>
+<button class="year-btn">1940s</button>
+<button class="year-btn">1950s</button>
+
+</div>
+
+<div class="timeline-slider-wrap">
+
+<input
+type="range"
+id="timelineSlider"
+min="1863"
+max="2026"
+value="1863">
+
+<div id="timelineLabel">1863</div>
+
+</div>
+
+<div class="timeline-preview">
+
+<div class="timeline-card">
+
+<img src="IMG_7232.JPG">
+
+<div class="timeline-card-content">
+
+<h3>1860s Colorado</h3>
+
+<p>
+Mining camps, frontier settlements, and territorial expansion.
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-card">
+
+<img src="IMG_7232.JPG">
+
+<div class="timeline-card-content">
+
+<h3>Railroads</h3>
+
+<p>
+The arrival of rail transportation across the Rocky Mountains.
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-card">
+
+<img src="IMG_7232.JPG">
+
+<div class="timeline-card-content">
+
+<h3>Communities</h3>
+
+<p>
+Historic towns, city streets, schools, and daily life.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+}
 
 /* Logo */
 
@@ -274,151 +366,172 @@ h2{
 
 }
 
-/* Timeline */
+/* =====================================
+   TIMELINE EXPLORER
+======================================*/
 
-.timeline{
+.timeline-section{
 
-    display:flex;
+    background:#f4f1e8;
 
-    justify-content:space-between;
-
-    gap:10px;
-
-    overflow:auto;
+    padding:90px 10%;
 
 }
 
-.timeline div{
-
-    background:white;
-
-    min-width:110px;
+.timeline-section h2{
 
     text-align:center;
 
-    padding:18px;
-
-    border-radius:50px;
-
-    transition:.3s;
-
-    border:1px solid #ddd;
+    margin-bottom:20px;
 
 }
 
-.timeline div:hover{
-
-    background:#13253d;
-
-    color:white;
-
-    border-color:#13253d;
-
-}
-
-/* Footer */
-
-footer{
-
-    background:#071321;
-
-    color:white;
+.timeline-intro{
 
     text-align:center;
 
-    padding:70px 20px;
+    max-width:700px;
 
-}
+    margin:0 auto 50px;
 
-/* Mobile */
+    color:#666;
 
-@media(max-width:900px){
-
-.hero-content h1{
-
-font-size:48px;
-
-}
-
-.hero-content p{
-
-font-size:20px;
-
-}
-
-.stats{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-.timeline{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-}
-
-}
-
-.timeline{
-    background:#f7f4ee;
-    padding:80px 40px;
-}
-
-.section-title{
-    font-size:2rem;
-    font-weight:600;
-    margin-bottom:30px;
 }
 
 .timeline-years{
+
     display:flex;
+
     flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:30px;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:50px;
+
 }
 
 .year-btn{
-    border:none;
-    background:#e2dfd8;
-    padding:12px 18px;
-    border-radius:8px;
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    padding:14px 22px;
+
+    border-radius:40px;
+
     cursor:pointer;
+
+    font-family:inherit;
+
     transition:.3s;
+
 }
 
 .year-btn:hover{
-    transform:translateY(-2px);
+
+    background:#14233a;
+
+    color:white;
+
+    border-color:#14233a;
+
 }
 
 .year-btn.active{
-    background:#b78a42;
+
+    background:#a88439;
+
     color:white;
+
+    border-color:#a88439;
+
 }
 
 .timeline-slider-wrap{
-    margin:40px 0;
+
+    max-width:900px;
+
+    margin:0 auto 60px;
+
 }
 
 #timelineSlider{
+
     width:100%;
+
 }
 
 #timelineLabel{
-    margin-top:10px;
-    font-size:1.1rem;
-    font-weight:bold;
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-size:24px;
+
+    color:#14233a;
+
 }
 
 .timeline-preview{
-    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
 }
 
 .timeline-card{
+
     background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.timeline-card img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+}
+
+.timeline-card-content{
+
+    padding:20px;
+
+}
+
+.timeline-card-content h3{
+
+    margin-bottom:10px;
+
+    color:#14233a;
+
+}
+
+.timeline-card-content p{
+
+    color:#666;
+
 }
