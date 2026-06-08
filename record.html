@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Colorado Film Bank Record</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.record{
+max-width:1000px;
+margin:auto;
+padding:40px;
+}
+
+.field{
+background:white;
+color:black;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+.label{
+font-weight:bold;
+font-size:18px;
+margin-bottom:10px;
+color:#0b5fff;
+}
+
+.value{
+font-size:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="record">
+
+<h1 id="title"></h1>
+
+<div class="field">
+<div class="label">LOCATION</div>
+<div id="location" class="value"></div>
+</div>
+
+<div class="field">
+<div class="label">COLLECTION</div>
+<div id="collection" class="value"></div>
+</div>
+
+<div class="field">
+<div class="label">CLIENT</div>
+<div id="client" class="value"></div>
+</div>
+
+<div class="field">
+<div class="label">COMMENTS AND PHYSICAL CONDITION</div>
+<div id="comments" class="value"></div>
+</div>
+
+</div>
+
+<script>
+
+const params=new URLSearchParams(window.location.search);
+const id=parseInt(params.get("id"));
+
+fetch("catalog.json")
+.then(r=>r.json())
+.then(data=>{
+
+const item=data[id];
+
+if(!item){
+document.body.innerHTML="<h1>Record not found</h1>";
+return;
+}
+
+document.getElementById("title").innerText=item.title||"";
+
+document.getElementById("location").innerText=item.location||"";
+
+document.getElementById("collection").innerText=item.collection||"";
+
+document.getElementById("client").innerText=item.client||"";
+
+document.getElementById("comments").innerText=item.comments||"";
+
+});
+
+</script>
+
+</body>
+</html>
