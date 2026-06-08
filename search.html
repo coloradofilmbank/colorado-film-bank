@@ -1,71 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Search Results</title>
+<meta charset="UTF-8">
+<title>Colorado Film Bank Search</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
-body{
-  font-family:Arial,sans-serif;
-  margin:40px;
-  background:#f5f5f5;
+
+.results{
+max-width:1200px;
+margin:auto;
+padding:40px;
 }
 
-h1{
-  margin-bottom:20px;
+.card{
+background:white;
+color:black;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
 }
 
-.result{
-  background:white;
-  padding:15px;
-  margin-bottom:10px;
-  border-radius:8px;
+.card h2{
+margin-top:0;
 }
 
-.result a{
-  text-decoration:none;
-  color:#0b5fff;
-  font-weight:bold;
+.card a{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#0b5fff;
+color:white;
+text-decoration:none;
+border-radius:6px;
 }
+
+.meta{
+color:#666;
+margin-top:10px;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<h1>Search Results</h1>
+<div class="results">
+
+<h1>Colorado Film Bank Search Results</h1>
 
 <div id="results"></div>
 
+</div>
+
 <script>
-const params = new URLSearchParams(window.location.search);
-const q = (params.get('q') || '').toLowerCase();
 
-fetch('catalog.json')
-.then(r => r.json())
-.then(data => {
+const params=new URLSearchParams(window.location.search);
 
-const matches = data.filter(item =>
-JSON.stringify(item).toLowerCase().includes(q)
+const q=(params.get("q")||"").toLowerCase();
+
+fetch("catalog.json")
+.then(r=>r.json())
+.then(data=>{
+
+const matches=data.filter(item=>{
+
+return (
+(item.title||"").toLowerCase().includes(q)
+||
+(item.collection||"").toLowerCase().includes(q)
+||
+(item.location||"").toLowerCase().includes(q)
+||
+(item.comments||"").toLowerCase().includes(q)
 );
 
-const results = document.getElementById('results');
+});
 
-if(matches.length === 0){
-results.innerHTML = '<p>No results found.</p>';
+const container=document.getElementById("results");
+
+if(matches.length===0){
+
+container.innerHTML="<h2>No results found.</h2>";
+
 return;
+
 }
 
-results.innerHTML = matches.map(item => `
-<div class="result">
-<a href="${item.url}">
-${item.title}
-</a>
-<br>
-${item.collection}
+container.innerHTML=matches.map(item=>`
+
+<div class="card">
+
+<h2>${item.title||""}</h2>
+
+<div class="meta">
+Collection: ${item.collection||""}
 </div>
-`).join('');
+
+<div class="meta">
+Location: ${item.location||""}
+</div>
+
+<a href="record.html?id=${item.id}">
+View Record
+</a>
+
+</div>
+
+`).join("");
 
 });
+
 </script>
 
 </body>
