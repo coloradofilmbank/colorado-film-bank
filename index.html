@@ -1,10 +1,92 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Colorado Film Bank</title><link rel='stylesheet' href='style.css'></head><body>
-<header class='hero'><nav><div class='logo'>COLORADO FILM BANK</div><div class='menu'><a href='#'>Home</a><a href='#'>Timeline</a><a href='#'>Collections</a><a href='#'>Browse</a></div></nav>
-<div class='hero-content'><h1>Colorado's Story.<br>Preserved in Film.</h1><p>43 Terabytes of digitized video, film, audio and photographs documenting Colorado from the 1860s to today.</p><div><a class='btn gold'>Explore Timeline</a><a class='btn'>Browse Collections</a></div></div></header>
-<section class='stats'><div><strong>6201+</strong><span>Cataloged Items</span></div><div><strong>1860s-Present</strong></div><div><strong>43 TB</strong></div><div><strong>Colorado</strong></div></section>
-<section><h2>Featured Collections</h2><div class='collections'>
-<div class='card'><img src='https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800'><h3>Stan Brakhage</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800'><h3>USAFA Archive</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800'><h3>Colorado Local Music</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800'><h3>Pikes Peak Cog Railroad</h3></div>
-</div></section></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colorado Film Bank</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+<nav>
+<div class="logo">COLORADO FILM BANK</div>
+<div>
+<a href="#timeline">Timeline</a>
+<a href="#collections">Collections</a>
+<a href="#search">Search</a>
+</div>
+</nav>
+
+<div class="hero-content">
+<h1>Colorado's Story.<br>Preserved in Film.</h1>
+<p>43+ TB of digitized Colorado history • 6,201 cataloged records • 1860s–Present</p>
+
+<input id="searchBox" placeholder="Search titles, collections, keywords, locations, clients...">
+
+<div class="buttons">
+<a class="btn gold" href="#search">Search Archive</a>
+<a class="btn" href="#collections">Browse Collections</a>
+</div>
+</div>
+</header>
+
+<section class="stats">
+<div><strong>43 TB+</strong><span>Digitized Archive</span></div>
+<div><strong>6201</strong><span>Catalog Records</span></div>
+<div><strong>160+</strong><span>Years Preserved</span></div>
+<div><strong>Colorado</strong><span>History Archive</span></div>
+</section>
+
+<section id="timeline">
+<h2>Timeline</h2>
+<div class="timeline">
+<div>1860s</div><div>1880s</div><div>1900s</div><div>1920s</div>
+<div>1940s</div><div>1960s</div><div>1980s</div><div>Today</div>
+</div>
+</section>
+
+<section id="collections">
+<h2>Featured Collections</h2>
+<div class="grid">
+<div class="card">Stan Brakhage</div>
+<div class="card">USAFA</div>
+<div class="card">Colorado Local Music</div>
+<div class="card">Pikes Peak Cog Railway</div>
+<div class="card">Western Jubilee</div>
+<div class="card">Pro Rodeo Hall of Fame</div>
+</div>
+</section>
+
+<section id="search">
+<h2>Archive Search Results</h2>
+<div id="results"></div>
+</section>
+
+<script>
+let catalog=[];
+fetch('catalog.json').then(r=>r.json()).then(data=>{
+ catalog=data;
+ render(data.slice(0,50));
+});
+
+function render(rows){
+ document.getElementById('results').innerHTML =
+ rows.map(r=>{
+   const vals=Object.values(r);
+   return `<div class="result">
+      <b>${vals[0]||'Untitled'}</b><br>
+      ${vals.slice(1,5).join(' | ')}
+   </div>`;
+ }).join('');
+}
+
+document.getElementById('searchBox').addEventListener('input',e=>{
+ const q=e.target.value.toLowerCase();
+ const rows=catalog.filter(r=>JSON.stringify(r).toLowerCase().includes(q)).slice(0,250);
+ render(rows);
+});
+</script>
+
+</body>
+</html>
