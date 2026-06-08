@@ -1,40 +1,10 @@
-
-<!doctype html><html><head><meta charset='utf-8'>
-<title>Colorado Film Bank Digital Museum</title>
-<link rel='stylesheet' href='style.css'></head><body>
-<header class='hero'>
-<h1>Colorado Film Bank</h1>
-<h2>Colorado's Visual History Archive</h2>
-<p>6,201 catalog records • 43 TB archive • 1860s to present</p>
-<input id='q' placeholder='Search 6,000+ historical records'>
-</header>
-
-<section>
-<h2>Featured Collections</h2>
-<div class='grid'>
-<div class='card'><b>STAN BRAKHAGE</b><br>1233 records</div><div class='card'><b>USAFA</b><br>954 records</div><div class='card'><b>CLOUD FOUNDATION</b><br>899 records</div><div class='card'><b>COLORADO LOCAL MUSIC</b><br>643 records</div><div class='card'><b>PRO RODEO HALL OF FAME</b><br>554 records</div><div class='card'><b>MURRAY GREEN</b><br>547 records</div><div class='card'><b>8MM</b><br>181 records</div><div class='card'><b>LANDSCAPES</b><br>147 records</div><div class='card'><b>RICK HAWK</b><br>124 records</div><div class='card'><b>PIKES PEAK COG RAILROAD</b><br>116 records</div><div class='card'><b>PPIHC</b><br>65 records</div><div class='card'><b>HELLHAWK</b><br>64 records</div><div class='card'><b>TED BUNDY</b><br>62 records</div><div class='card'><b>8MM TRANSFERS</b><br>42 records</div><div class='card'><b>COLORADO LOCAL ART</b><br>42 records</div><div class='card'><b>PIKES PEAK COG RAILWAY</b><br>28 records</div><div class='card'><b>COFFIN RACES</b><br>27 records</div><div class='card'><b>HORROR PD</b><br>26 records</div><div class='card'><b>JOHN F KENNEDY</b><br>25 records</div><div class='card'><b>MANITOU SPRINGS HERITAGE CENTER</b><br>24 records</div><div class='card'><b>HOME VIDEOS</b><br>24 records</div><div class='card'><b>LOWELL THOMAS</b><br>18 records</div><div class='card'><b>PEANUT</b><br>17 records</div><div class='card'><b>JIM BATES</b><br>16 records</div><div class='card'><b>IMAGINE LITTLE BEAR</b><br>14 records</div><div class='card'><b>OLD COLORADO CITY MUSEUM</b><br>12 records</div><div class='card'><b>MINERAL SPRINGS</b><br>11 records</div><div class='card'><b>CANON CITY PRISON MUSEUM</b><br>11 records</div><div class='card'><b>SKATEBOARDING</b><br>11 records</div><div class='card'><b>MANITOU INCLINE</b><br>10 records</div>
-</div>
-</section>
-
-<section>
-<h2>Timeline Overview</h2>
-<div class='grid'>
-<div class='card'>2010s<br>11 records</div>
-</div>
-</section>
-
-<section>
-<h2>Search Results</h2>
-<div id='results'></div>
-</section>
-
-<script>
-let data=[];
-fetch('catalog.json').then(r=>r.json()).then(j=>data=j);
-q.oninput=function(){
-let s=this.value.toLowerCase();
-let rows=data.filter(x=>JSON.stringify(x).toLowerCase().includes(s)).slice(0,250);
-results.innerHTML=rows.map(r=>`<div class='card'><b>${r.title}</b><br>${r.collection}<br>${r.date}</div>`).join('');
-}
-</script>
-</body></html>
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Colorado Film Bank</title><link rel='stylesheet' href='style.css'></head><body>
+<header class='hero'><nav><div class='logo'>COLORADO FILM BANK</div><div class='menu'><a href='#'>Home</a><a href='#'>Timeline</a><a href='#'>Collections</a><a href='#'>Browse</a></div></nav>
+<div class='hero-content'><h1>Colorado's Story.<br>Preserved in Film.</h1><p>43 Terabytes of digitized video, film, audio and photographs documenting Colorado from the 1860s to today.</p><div><a class='btn gold'>Explore Timeline</a><a class='btn'>Browse Collections</a></div></div></header>
+<section class='stats'><div><strong>6201+</strong><span>Cataloged Items</span></div><div><strong>1860s-Present</strong></div><div><strong>43 TB</strong></div><div><strong>Colorado</strong></div></section>
+<section><h2>Featured Collections</h2><div class='collections'>
+<div class='card'><img src='https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800'><h3>Stan Brakhage</h3></div>
+<div class='card'><img src='https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800'><h3>USAFA Archive</h3></div>
+<div class='card'><img src='https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800'><h3>Colorado Local Music</h3></div>
+<div class='card'><img src='https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800'><h3>Pikes Peak Cog Railroad</h3></div>
+</div></section></body></html>
