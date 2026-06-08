@@ -1,19 +1,14 @@
 // Colorado Film Bank
 
-const search = document.getElementById("q");
-
-// Search on Enter
-
-search.addEventListener("keypress", function(e){
-
-    if(e.key==="Enter"){
-
-        window.location =
-        "search.html?q=" +
-        encodeURIComponent(search.value);
-
+<script>
+document.getElementById('q').addEventListener('keypress', function(e){
+    if(e.key==='Enter'){
+        window.location='search.html?q='+encodeURIComponent(this.value);
     }
+});
+</script>
 
+<script src="script.js"></script>
 });
 
 // Placeholder rotation
