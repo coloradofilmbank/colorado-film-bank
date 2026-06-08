@@ -192,9 +192,11 @@ input:focus{
 
 /* Sections */
 
-<section class="timeline-section">
+section{
 
     padding:80px 10%;
+
+}
 
 }
 
@@ -306,57 +308,6 @@ h2{
 
 }
 
-.timeline-years{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:12px;
-
-    margin-bottom:50px;
-
-}
-
-.year-btn{
-
-    background:white;
-
-    border:1px solid #ddd;
-
-    padding:14px 22px;
-
-    border-radius:40px;
-
-    cursor:pointer;
-
-    font-family:inherit;
-
-    transition:.3s;
-
-}
-
-.year-btn:hover{
-
-    background:#14233a;
-
-    color:white;
-
-    border-color:#14233a;
-
-}
-
-.year-btn.active{
-
-    background:#a88439;
-
-    color:white;
-
-    border-color:#a88439;
-
-}
 
 .timeline-slider-wrap{
 
