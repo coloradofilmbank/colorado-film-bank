@@ -31,7 +31,54 @@ placeholder="Search collections, locations, films, photographs...">
 </div>
 
 </header>
+<section class="timeline">
 
+    <div class="section-title">
+        Explore Colorado History by Timeline
+    </div>
+
+    <div class="timeline-years">
+
+        <button class="year-btn active">1860s</button>
+        <button class="year-btn">1870s</button>
+        <button class="year-btn">1880s</button>
+        <button class="year-btn">1890s</button>
+        <button class="year-btn">1900s</button>
+        <button class="year-btn">1910s</button>
+        <button class="year-btn">1920s</button>
+        <button class="year-btn">1930s</button>
+        <button class="year-btn">1940s</button>
+        <button class="year-btn">1950s</button>
+
+    </div>
+
+    <div class="timeline-slider-wrap">
+
+        <input
+            type="range"
+            id="timelineSlider"
+            min="1863"
+            max="2026"
+            value="1863">
+
+        <div id="timelineLabel">
+            1863
+        </div>
+
+    </div>
+
+    <div class="timeline-preview">
+
+        <div class="timeline-card">
+            <h3>Selected Period</h3>
+            <p id="selectedDecade">
+                1860s
+            </p>
+        </div>
+
+    </div>
+
+</section>
 <script>
 document.getElementById('q').addEventListener('keypress', function(e){
     if(e.key==='Enter'){
