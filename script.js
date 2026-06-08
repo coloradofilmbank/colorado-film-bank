@@ -61,9 +61,30 @@ window.addEventListener("load",()=>{
 
 });
 
-const buttons =
-document.querySelectorAll('.year-btn');
+const eraCards =
+document.querySelectorAll('.era-card');
 
+const selected =
+document.getElementById('selectedDecade');
+
+eraCards.forEach(card => {
+
+    card.addEventListener('click', () => {
+
+        eraCards.forEach(c =>
+            c.classList.remove('active')
+        );
+
+        card.classList.add('active');
+
+        if(selected){
+            selected.textContent =
+            card.dataset.era;
+        }
+
+    });
+
+});
 const slider =
 document.getElementById('timelineSlider');
 
