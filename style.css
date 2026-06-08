@@ -40,8 +40,6 @@ body{
 
 }
 
-}
-
 /* Logo */
 
 .logo{
@@ -194,7 +192,7 @@ input:focus{
 
 /* Sections */
 
-section{
+<section class="timeline-section">
 
     padding:80px 10%;
 
