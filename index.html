@@ -1,21 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Colorado Film Bank</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-<html><head><link rel='stylesheet' href='style.css'></head><body>
-<div class='hero'>
+<body>
+
+<header class="hero">
 <h1>Colorado Film Bank</h1>
-<h2>Searchable Archive</h2>
-<p>6,201 records from your catalog</p>
-<input id='q' placeholder='Search titles and collections'>
+<p>6,201 searchable archival records</p>
+
+<input
+id="q"
+placeholder="Search titles, collections, locations..."
+autofocus>
+</header>
+
+<div class="container">
+
+<h2>Featured Collections</h2>
+
+<div class="grid">
+
+<div class="card">
+<a href="collections/stan-brakhage.html">
+Stan Brakhage
+<br>
+1233 records
+</a>
 </div>
-<div class='container'>
-<h2>Collections</h2>
-<div class='grid'><div class='card'><a href='collections/stan-brakhage.html'>STAN BRAKHAGE<br>1233 records</a></div><div class='card'><a href='collections/usafa.html'>USAFA<br>954 records</a></div><div class='card'><a href='collections/cloud-foundation.html'>CLOUD FOUNDATION<br>899 records</a></div><div class='card'><a href='collections/colorado-local-music.html'>COLORADO LOCAL MUSIC<br>643 records</a></div><div class='card'><a href='collections/pro-rodeo-hall-of-fame.html'>PRO RODEO HALL OF FAME<br>554 records</a></div><div class='card'><a href='collections/murray-green.html'>MURRAY GREEN<br>547 records</a></div><div class='card'><a href='collections/8mm.html'>8MM<br>181 records</a></div><div class='card'><a href='collections/landscapes.html'>LANDSCAPES<br>147 records</a></div><div class='card'><a href='collections/rick-hawk.html'>RICK HAWK<br>124 records</a></div><div class='card'><a href='collections/pikes-peak-cog-railroad.html'>PIKES PEAK COG RAILROAD<br>116 records</a></div><div class='card'><a href='collections/ppihc.html'>PPIHC<br>65 records</a></div><div class='card'><a href='collections/hellhawk.html'>HELLHAWK<br>64 records</a></div><div class='card'><a href='collections/ted-bundy.html'>TED BUNDY<br>62 records</a></div><div class='card'><a href='collections/8mm-transfers.html'>8MM TRANSFERS<br>42 records</a></div><div class='card'><a href='collections/colorado-local-art.html'>COLORADO LOCAL ART<br>42 records</a></div><div class='card'><a href='collections/pikes-peak-cog-railway.html'>PIKES PEAK COG RAILWAY<br>28 records</a></div><div class='card'><a href='collections/coffin-races.html'>COFFIN RACES<br>27 records</a></div><div class='card'><a href='collections/horror-pd.html'>HORROR PD<br>26 records</a></div><div class='card'><a href='collections/john-f-kennedy.html'>JOHN F KENNEDY<br>25 records</a></div><div class='card'><a href='collections/home-videos.html'>HOME VIDEOS<br>24 records</a></div><div class='card'><a href='collections/manitou-springs-heritage-center.html'>MANITOU SPRINGS HERITAGE CENTER<br>24 records</a></div><div class='card'><a href='collections/lowell-thomas.html'>LOWELL THOMAS<br>18 records</a></div><div class='card'><a href='collections/peanut.html'>PEANUT<br>17 records</a></div><div class='card'><a href='collections/jim-bates.html'>JIM BATES<br>16 records</a></div><div class='card'><a href='collections/imagine-little-bear.html'>IMAGINE LITTLE BEAR<br>14 records</a></div><div class='card'><a href='collections/old-colorado-city-museum.html'>OLD COLORADO CITY MUSEUM<br>12 records</a></div><div class='card'><a href='collections/canon-city-prison-museum.html'>CANON CITY PRISON MUSEUM<br>11 records</a></div><div class='card'><a href='collections/mineral-springs.html'>MINERAL SPRINGS<br>11 records</a></div><div class='card'><a href='collections/skateboarding.html'>SKATEBOARDING<br>11 records</a></div><div class='card'><a href='collections/cuban-missile-crisis.html'>CUBAN MISSILE CRISIS<br>10 records</a></div><div class='card'><a href='collections/manitou-incline.html'>MANITOU INCLINE<br>10 records</a></div><div class='card'><a href='collections/henry-soderberg.html'>HENRY SODERBERG<br>8 records</a></div><div class='card'><a href='collections/wax-cylinders-pd.html'>WAX CYLINDERS PD<br>8 records</a></div><div class='card'><a href='collections/indianapolis-500.html'>INDIANAPOLIS 500<br>7 records</a></div><div class='card'><a href='collections/pueblo-rawlins-library.html'>PUEBLO RAWLINS LIBRARY<br>7 records</a></div><div class='card'><a href='collections/experimental-video.html'>EXPERIMENTAL VIDEO<br>6 records</a></div><div class='card'><a href='collections/gail-mccomas.html'>GAIL MCCOMAS<br>6 records</a></div><div class='card'><a href='collections/glenn-bozell-jacobs.html'>GLENN BOZELL JACOBS<br>6 records</a></div><div class='card'><a href='collections/kit-carson-museum.html'>KIT CARSON MUSEUM<br>6 records</a></div><div class='card'><a href='collections/ncaa-hockey.html'>NCAA HOCKEY<br>6 records</a></div></div>
-<h2>Results</h2><div id='results'></div>
+
+<div class="card">
+<a href="collections/usafa.html">
+USAFA
+<br>
+954 records
+</a>
 </div>
+
+<div class="card">
+<a href="collections/cloud-foundation.html">
+Cloud Foundation
+<br>
+899 records
+</a>
+</div>
+
+<div class="card">
+<a href="collections/colorado-local-music.html">
+Colorado Local Music
+<br>
+643 records
+</a>
+</div>
+
+</div>
+
+<h2>Recent Additions</h2>
+<div id="recent"></div>
+
+<h2>Search Results</h2>
+<div id="results"></div>
+
+</div>
+
 <script>
-let data=[];fetch('catalog.json').then(r=>r.json()).then(j=>data=j);
+
+let data=[];
+
+fetch('catalog.json')
+.then(r=>r.json())
+.then(records=>{
+
+data=records;
+
+recent.innerHTML=records
+.slice(0,20)
+.map(r=>`
+<div class="card">
+<a href="${r.url}">${r.title}</a>
+<br>
+${r.collection}
+</div>
+`)
+.join('');
+
+});
+
 q.oninput=function(){
-let s=this.value.toLowerCase();
-let rows=data.filter(x=>JSON.stringify(x).toLowerCase().includes(s)).slice(0,200);
-results.innerHTML=rows.map(r=>`<div class='card'><a href='${r.url}'>${r.title}</a><br>${r.collection}</div>`).join('');
+
+let term=this.value.toLowerCase();
+
+if(!term){
+results.innerHTML='';
+return;
 }
-</script></body></html>
+
+let matches=data
+.filter(r=>
+JSON.stringify(r)
+.toLowerCase()
+.includes(term))
+.slice(0,200);
+
+results.innerHTML=matches.map(r=>`
+<div class="card">
+<a href="${r.url}">${r.title}</a>
+<br>
+${r.collection}
+</div>
+`).join('');
+
+};
+
+</script>
+
+</body>
+</html>
