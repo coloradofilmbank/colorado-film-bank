@@ -65,3 +65,39 @@ window.addEventListener("load",()=>{
     document.body.style.opacity = 1;
 
 });
+
+const buttons =
+document.querySelectorAll('.year-btn');
+
+const slider =
+document.getElementById('timelineSlider');
+
+const label =
+document.getElementById('timelineLabel');
+
+const selected =
+document.getElementById('selectedDecade');
+
+buttons.forEach(button=>{
+
+    button.addEventListener('click',()=>{
+
+        buttons.forEach(b=>
+            b.classList.remove('active')
+        );
+
+        button.classList.add('active');
+
+        selected.textContent =
+        button.textContent;
+
+    });
+
+});
+
+slider.addEventListener('input',()=>{
+
+    label.textContent =
+    slider.value;
+
+});
