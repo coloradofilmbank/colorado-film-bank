@@ -1,0 +1,40 @@
+
+<!doctype html><html><head><meta charset='utf-8'>
+<title>Colorado Film Bank Digital Museum</title>
+<link rel='stylesheet' href='style.css'></head><body>
+<header class='hero'>
+<h1>Colorado Film Bank</h1>
+<h2>Colorado's Visual History Archive</h2>
+<p>6,201 catalog records • 43 TB archive • 1860s to present</p>
+<input id='q' placeholder='Search 6,000+ historical records'>
+</header>
+
+<section>
+<h2>Featured Collections</h2>
+<div class='grid'>
+<div class='card'><b>STAN BRAKHAGE</b><br>1233 records</div><div class='card'><b>USAFA</b><br>954 records</div><div class='card'><b>CLOUD FOUNDATION</b><br>899 records</div><div class='card'><b>COLORADO LOCAL MUSIC</b><br>643 records</div><div class='card'><b>PRO RODEO HALL OF FAME</b><br>554 records</div><div class='card'><b>MURRAY GREEN</b><br>547 records</div><div class='card'><b>8MM</b><br>181 records</div><div class='card'><b>LANDSCAPES</b><br>147 records</div><div class='card'><b>RICK HAWK</b><br>124 records</div><div class='card'><b>PIKES PEAK COG RAILROAD</b><br>116 records</div><div class='card'><b>PPIHC</b><br>65 records</div><div class='card'><b>HELLHAWK</b><br>64 records</div><div class='card'><b>TED BUNDY</b><br>62 records</div><div class='card'><b>8MM TRANSFERS</b><br>42 records</div><div class='card'><b>COLORADO LOCAL ART</b><br>42 records</div><div class='card'><b>PIKES PEAK COG RAILWAY</b><br>28 records</div><div class='card'><b>COFFIN RACES</b><br>27 records</div><div class='card'><b>HORROR PD</b><br>26 records</div><div class='card'><b>JOHN F KENNEDY</b><br>25 records</div><div class='card'><b>MANITOU SPRINGS HERITAGE CENTER</b><br>24 records</div><div class='card'><b>HOME VIDEOS</b><br>24 records</div><div class='card'><b>LOWELL THOMAS</b><br>18 records</div><div class='card'><b>PEANUT</b><br>17 records</div><div class='card'><b>JIM BATES</b><br>16 records</div><div class='card'><b>IMAGINE LITTLE BEAR</b><br>14 records</div><div class='card'><b>OLD COLORADO CITY MUSEUM</b><br>12 records</div><div class='card'><b>MINERAL SPRINGS</b><br>11 records</div><div class='card'><b>CANON CITY PRISON MUSEUM</b><br>11 records</div><div class='card'><b>SKATEBOARDING</b><br>11 records</div><div class='card'><b>MANITOU INCLINE</b><br>10 records</div>
+</div>
+</section>
+
+<section>
+<h2>Timeline Overview</h2>
+<div class='grid'>
+<div class='card'>2010s<br>11 records</div>
+</div>
+</section>
+
+<section>
+<h2>Search Results</h2>
+<div id='results'></div>
+</section>
+
+<script>
+let data=[];
+fetch('catalog.json').then(r=>r.json()).then(j=>data=j);
+q.oninput=function(){
+let s=this.value.toLowerCase();
+let rows=data.filter(x=>JSON.stringify(x).toLowerCase().includes(s)).slice(0,250);
+results.innerHTML=rows.map(r=>`<div class='card'><b>${r.title}</b><br>${r.collection}<br>${r.date}</div>`).join('');
+}
+</script>
+</body></html>

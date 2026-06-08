@@ -1,0 +1,7 @@
+
+body{margin:0;font-family:Arial,sans-serif;background:#0f172a;color:#fff}
+.hero{padding:80px 20px;text-align:center;background:#111827}
+input{width:80%;max-width:900px;padding:15px;font-size:18px}
+section{padding:40px 8%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:#1f2937;padding:16px;border-radius:10px}
