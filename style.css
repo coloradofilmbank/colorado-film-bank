@@ -568,3 +568,12 @@ color:#14233a;
 .grid .card:hover{
 text-decoration:none;
 }
+
+.section-title{
+font-size:52px;
+font-weight:400;
+color:#14233a;
+margin-bottom:50px;
+text-align:center;
+letter-spacing:1px;
+}
