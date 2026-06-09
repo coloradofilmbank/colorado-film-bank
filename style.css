@@ -213,13 +213,10 @@ h2{
 /* Cards */
 
 .grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-    gap:30px;
-
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(360px,1fr));
+gap:40px;
 }
 
 .card{
