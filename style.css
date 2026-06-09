@@ -557,3 +557,17 @@ color:#14233a;
 .card:hover{
 text-decoration:none;
 }
+
+.grid .card{
+display:block;
+text-decoration:none;
+color:inherit;
+}
+
+.grid .card h3{
+color:#14233a;
+}
+
+.grid .card:hover{
+text-decoration:none;
+}
