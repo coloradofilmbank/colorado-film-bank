@@ -65,24 +65,16 @@ body{
 }
 
 .hero-content h1{
-
-    font-size:72px;
-
-    font-weight:400;
-
-    color:white;
-
-    margin-bottom:25px;
-
-    letter-spacing:2px;
-
+font-size:96px;
+max-width:1000px;
+line-height:1.05;
 }
 
 .hero-content p{
 
     color:#f5f5f5;
 
-    font-size:24px;
+    font-size:28px;
 
     max-width:820px;
 
