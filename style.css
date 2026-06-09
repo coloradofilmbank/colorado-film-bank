@@ -544,3 +544,16 @@ border-radius:12px;
 overflow:hidden;
 box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
+
+.card{
+text-decoration:none;
+color:inherit;
+}
+
+.card h3{
+color:#14233a;
+}
+
+.card:hover{
+text-decoration:none;
+}
