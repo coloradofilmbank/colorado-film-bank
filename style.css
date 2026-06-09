@@ -527,3 +527,22 @@ footer p{
     color:#d0d0d0;
 
 }
+
+.map-section{
+padding:60px;
+background:#0d1525;
+}
+
+.map-section h2{
+font-size:36px;
+margin-bottom:25px;
+color:white;
+}
+
+#archive-map{
+height:600px;
+width:100%;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
