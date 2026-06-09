@@ -577,3 +577,21 @@ margin-bottom:50px;
 text-align:center;
 letter-spacing:1px;
 }
+
+.featured-item{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+background:white;
+}
+
+.featured-image img{
+width:100%;
+border-radius:12px;
+}
+
+.featured-content h3{
+font-size:42px;
+margin:20px 0;
+}
