@@ -17,7 +17,124 @@ src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
 </script>
 
 </head>
+    
+<script>
 
+const map = L.map('archive-map').setView(
+[38.9,-105.5],
+7
+);
+
+L.tileLayer(
+'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+attribution:'Colorado Film Bank'
+}
+).addTo(map);
+
+const locations = [
+
+{
+name:"Colorado Springs",
+count:41,
+lat:38.8339,
+lng:-104.8214
+},
+
+{
+name:"Manitou Springs",
+count:18,
+lat:38.8570,
+lng:-104.9130
+},
+
+{
+name:"Denver",
+count:87,
+lat:39.7392,
+lng:-104.9903
+},
+
+{
+name:"Pueblo",
+count:28,
+lat:38.2544,
+lng:-104.6091
+},
+
+{
+name:"Canon City",
+count:14,
+lat:38.4494,
+lng:-105.2253
+},
+
+{
+name:"Cripple Creek",
+count:11,
+lat:38.7469,
+lng:-105.1786
+},
+
+{
+name:"Grand Junction",
+count:19,
+lat:39.0639,
+lng:-108.5506
+},
+
+{
+name:"Durango",
+count:16,
+lat:37.2753,
+lng:-107.8801
+},
+
+{
+name:"Fort Collins",
+count:34,
+lat:40.5853,
+lng:-105.0844
+},
+
+{
+name:"Leadville",
+count:22,
+lat:39.2508,
+lng:-106.2925
+}
+
+];
+
+locations.forEach(location=>{
+
+const marker = L.marker(
+[
+location.lat,
+location.lng
+]
+).addTo(map);
+
+marker.bindPopup(
+`
+<h3>${location.name}</h3>
+
+<p>
+${location.count} archive records
+</p>
+
+<button onclick="
+window.location='search.html?q=${encodeURIComponent(location.name)}'
+">
+Search Records
+</button>
+`
+);
+
+});
+
+</script>
+    
 <body>
 
 <header class="hero">
