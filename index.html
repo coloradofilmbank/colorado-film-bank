@@ -663,6 +663,20 @@ Search Records
 
 });
         
+<script>
+
+function scrollCollections(direction){
+
+const row =
+document.getElementById('collectionsRow');
+
+row.scrollBy({
+left: direction * 600,
+behavior:'smooth'
+});
+
+}
+
 </script>
 
 <script src="script.js"></script>
