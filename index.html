@@ -60,13 +60,17 @@ placeholder="Search collections, locations, films, photographs...">
 
 </header>
     
- <section>
+<section>
 
-<div class="section-title">
-Explore Collections
-</div>
+<h2>Explore Collections</h2>
 
-<div class="grid">
+<div class="carousel-wrapper">
+
+<button class="arrow left" onclick="scrollCollections(-1)">
+❮
+</button>
+
+<div class="collections-row" id="collectionsRow">
 
 <a href="search.html?q=Stan Brakhage" class="card collection-card">
 <img src="IMG_7232.JPG">
@@ -310,13 +314,11 @@ Explore Collections
 
 </div>
 
-</section>
-    
-    <section class="map-section">
+<button class="arrow right" onclick="scrollCollections(1)">
+❯
+</button>
 
-<h2>Explore Colorado By Location</h2>
-
-<div id="archive-map"></div>
+</div>
 
 </section>
     
