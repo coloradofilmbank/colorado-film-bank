@@ -205,15 +205,14 @@ h2{
 /* Cards */
 
 .grid{
-    display:flex;
-    gap:30px;
-    overflow-x:auto;
-    padding-bottom:20px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(180px,1fr));
+    gap:20px;
 }
 
 .card{
-    min-width:300px;
-    flex-shrink:0;
+    min-width:auto;
 }
 
 .card{
@@ -251,21 +250,13 @@ h2{
 }
 
 .card h3{
-
-    padding:20px;
-
-    font-size:28px;
-
-    font-weight:400;
-
+    font-size:20px;
+    padding:12px;
 }
 
 .card p{
-
-    padding:0 20px 25px;
-
-    color:#666;
-
+    padding:0 12px 12px;
+    font-size:14px;
 }
 
 /* =====================================
