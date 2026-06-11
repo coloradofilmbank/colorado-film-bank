@@ -19,8 +19,8 @@ body{
 /* Hero */
 
 .hero{
-
-    min-height:100vh;
+    height:650px;
+    min-height:auto;
 
     background:
     linear-gradient(rgba(5,14,24,.55),rgba(5,14,24,.70)),
@@ -37,7 +37,6 @@ body{
     text-align:center;
 
     padding:40px;
-
 }
 
 /* Logo */
@@ -658,13 +657,4 @@ width:100%;
 
 .map-column{
 width:100%;
-}
-
-.map-section{
-padding:0;
-background:none;
-}
-
-#archive-map{
-height:500px;
 }
