@@ -639,21 +639,14 @@ location.lng
 ]
 ).addTo(map);
 
-marker.bindPopup(
-`
+marker.bindPopup(`
 <h3>${location.name}</h3>
+<p>${location.count} archive records</p>
 
-<p>
-${location.count} archive records
-</p>
-
-<button onclick="
-window.location='search.html?q=${encodeURIComponent(location.name)}'
-">
+<a href="search.html?q=${encodeURIComponent(location.name)}">
 Search Records
-</button>
-`
-);
+</a>
+`);
 
 });
 
