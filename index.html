@@ -60,18 +60,6 @@ placeholder="Search collections, locations, films, photographs...">
 
     </header>
 
-<section class="map-section">
-
-<h2>Explore Colorado By Location</h2>
-
-<div id="archive-map"></div>
-
-</section>
-
-<section>
-
-</header>
-    
 <section>
 
 <h2>Explore Collections</h2>
@@ -333,7 +321,11 @@ placeholder="Search collections, locations, films, photographs...">
 </div>
 
 </section>
-    
+
+    <div class="explorer-layout">
+
+<div class="timeline-column">
+
 <section class="timeline-section">
 
     <div class="section-title">
@@ -545,7 +537,18 @@ film, photography, and archival collections.
 </p>
 
 </footer>
-    
+    </section>
+
+</div>
+
+<div class="map-column">
+
+<section class="map-section">
+
+<h2>Explore Colorado By Location</h2>
+
+<div id="archive-map"></div>
+
 <script>
 document.getElementById('q').addEventListener('keypress', function(e){
     if(e.key==='Enter'){
@@ -665,6 +668,12 @@ Search Records
 
 });
 
+        </section>
+
+</div>
+
+</div>
+        
 </script>
 
 <script>
