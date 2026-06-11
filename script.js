@@ -89,3 +89,56 @@ slider.value;
 });
 
 }
+
+// TIMELINE SEARCH
+
+fetch('catalog.json')
+.then(response => response.json())
+.then(records => {
+
+const slider =
+document.getElementById('timelineSlider');
+
+const results =
+document.getElementById('timelineResults');
+
+function updateTimeline(){
+
+const year =
+parseInt(slider.value);
+
+const matches =
+records.filter(record => {
+
+const match =
+record.title.match(/\b(18|19|20)\d{2}\b/);
+
+if(!match) return false;
+
+return parseInt(match[0]) === year;
+
+});
+
+results.innerHTML =
+`<h2>${matches.length} Records from ${year}</h2>`;
+
+matches.forEach(record => {
+
+results.innerHTML += `
+<div class="timeline-result">
+<a href="${record.url}">
+<h3>${record.title}</h3>
+</a>
+<p>${record.collection}</p>
+</div>
+`;
+
+});
+
+}
+
+slider.addEventListener('input', updateTimeline);
+
+updateTimeline();
+
+});
