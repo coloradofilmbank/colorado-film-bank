@@ -102,6 +102,8 @@ document.getElementById('timelineSlider');
 const results =
 document.getElementById('timelineResults');
 
+if(!slider || !results) return;
+    
 function updateTimeline(){
 
 const year =
