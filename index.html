@@ -675,6 +675,26 @@ behavior:'smooth'
 
 </script>
 
+<script>
+
+const map = L.map('archive-map').setView(
+[38.9,-105.5],
+7
+);
+
+L.tileLayer(
+'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+attribution:'Colorado Film Bank'
+}
+).addTo(map);
+
+// locations array
+
+// markers
+
+</script>
+    
 <script src="script.js"></script>
 
 </body>
