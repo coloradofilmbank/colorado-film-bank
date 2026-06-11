@@ -612,11 +612,10 @@ gap:15px;
 }
 
 .collections-row{
-display:flex;
-overflow:hidden;
-scroll-behavior:smooth;
-gap:20px;
-width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    overflow:visible;
 }
 
 .collection-card{
