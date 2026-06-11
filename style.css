@@ -643,3 +643,28 @@ flex-shrink:0;
 .arrow:hover{
 background:#a88439;
 }
+
+.explorer-layout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:40px;
+padding:80px 10%;
+align-items:start;
+}
+
+.timeline-column{
+width:100%;
+}
+
+.map-column{
+width:100%;
+}
+
+.map-section{
+padding:0;
+background:none;
+}
+
+#archive-map{
+height:500px;
+}
