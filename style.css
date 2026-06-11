@@ -650,8 +650,6 @@ background:#a88439;
 
 .timeline-column{
     flex:1;
-    max-height:900px;
-    overflow:hidden;
 }
 
 .map-column{
@@ -660,9 +658,4 @@ background:#a88439;
 
 .timeline-section{
     margin-bottom:30px;
-}
-
-.carousel-wrapper{
-    max-height:400px;
-    overflow-y:auto;
 }
