@@ -661,30 +661,25 @@ Search Records
 
 });
 
+       </script>  
+
         </section>
 
 </div>
 
 </div>
-        
-</script>
 
 <script>
-
 function scrollCollections(direction){
+    const row = document.getElementById('collectionsRow');
 
-const row =
-document.getElementById('collectionsRow');
-
-row.scrollBy({
-left: direction * 600,
-behavior:'smooth'
-});
-
+    row.scrollBy({
+        left: direction * 600,
+        behavior:'smooth'
+    });
 }
-
 </script>
-    
+
 <script src="script.js"></script>
 
 </body>
