@@ -644,17 +644,26 @@ background:#a88439;
 }
 
 .explorer-layout{
-display:grid;
-grid-template-columns:65% 35%;
-gap:30px;
-padding:50px 5%;
-align-items:start;
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
 }
 
 .timeline-column{
-width:100%;
+    flex:1;
+    max-height:900px;
+    overflow:hidden;
 }
 
 .map-column{
-width:100%;
+    flex:1;
+}
+
+.timeline-section{
+    margin-bottom:30px;
+}
+
+.carousel-wrapper{
+    max-height:400px;
+    overflow-y:auto;
 }
