@@ -58,6 +58,18 @@ placeholder="Search collections, locations, films, photographs...">
 
 </div>
 
+    </header>
+
+<section class="map-section">
+
+<h2>Explore Colorado By Location</h2>
+
+<div id="archive-map"></div>
+
+</section>
+
+<section>
+
 </header>
     
 <section>
@@ -665,26 +677,6 @@ behavior:'smooth'
 });
 
 }
-
-</script>
-
-<script>
-
-const map = L.map('archive-map').setView(
-[38.9,-105.5],
-7
-);
-
-L.tileLayer(
-'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-{
-attribution:'Colorado Film Bank'
-}
-).addTo(map);
-
-// locations array
-
-// markers
 
 </script>
     
