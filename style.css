@@ -19,8 +19,8 @@ body{
 /* Hero */
 
 .hero{
-    height:600px;
-    min-height:auto;
+
+    min-height:100vh;
 
     background:
     linear-gradient(rgba(5,14,24,.55),rgba(5,14,24,.70)),
@@ -37,6 +37,7 @@ body{
     text-align:center;
 
     padding:40px;
+
 }
 
 /* Logo */
@@ -612,16 +613,19 @@ gap:15px;
 }
 
 .collections-row{
-    display:grid;
-    grid-template-columns:repeat(5, 1fr);
-    gap:20px;
-    width:100%;
+display:flex;
+overflow:hidden;
+scroll-behavior:smooth;
+gap:20px;
+width:100%;
 }
 
 .collection-card{
-    min-width:0;
-    width:100%;
-    padding:20px;
+min-width:220px;
+padding:20px;
+text-align:center;
+text-decoration:none;
+color:inherit;
 }
 
 .arrow{
@@ -638,21 +642,4 @@ flex-shrink:0;
 
 .arrow:hover{
 background:#a88439;
-}
-
-.explorer-layout{
-display:grid;
-grid-template-columns:65% 35%;
-gap:30px;
-padding:50px 5%;
-align-items:start;
-}
-
-.timeline-column{
-    width:100%;
-    max-width:none;
-}
-
-.map-column{
-width:100%;
 }
