@@ -17,9 +17,7 @@ src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
 </script>
 
 </head>
-    
-
-    
+     
 <body>
 
     <nav class="topnav">
@@ -60,19 +58,9 @@ placeholder="Search collections, locations, films, photographs...">
 
     </header>
 
-<section class="map-section">
+    <div class="explorer-layout">
 
-<h2>Explore Colorado By Location</h2>
-
-<div id="archive-map"></div>
-
-</section>
-
-<section>
-
-</header>
-    
-<section>
+<div class="timeline-column">
 
 <h2>Explore Collections</h2>
 
@@ -324,15 +312,11 @@ placeholder="Search collections, locations, films, photographs...">
 <p>6 records</p>
 </a>
 
-</div>
-
-<button class="arrow right" onclick="scrollCollections(1)">
+    <button class="arrow right" onclick="scrollCollections(1)">
 ❯
 </button>
 
 </div>
-
-</section>
     
 <section class="timeline-section">
 
@@ -545,7 +529,18 @@ film, photography, and archival collections.
 </p>
 
 </footer>
-    
+    </section>
+
+</div>
+
+<div class="map-column">
+
+<section class="map-section">
+
+<h2>Explore Colorado By Location</h2>
+
+<div id="archive-map"></div>
+
 <script>
 document.getElementById('q').addEventListener('keypress', function(e){
     if(e.key==='Enter'){
@@ -570,65 +565,68 @@ attribution:'Colorado Film Bank'
 
 const locations = [
 
-{
-name:"Colorado Springs",
-lat:38.8339,
-lng:-104.8214
-},
-
-{
-name:"Manitou Springs",
-lat:38.8570,
-lng:-104.9130
-},
-
-{
-name:"Denver",
-lat:39.7392,
-lng:-104.9903
-},
-
-{
-name:"Pueblo",
-lat:38.2544,
-lng:-104.6091
-},
-
-{
-name:"Canon City",
-lat:38.4494,
-lng:-105.2253
-},
-
-{
-name:"Cripple Creek",
-lat:38.7469,
-lng:-105.1786
-},
-
-{
-name:"Grand Junction",
-lat:39.0639,
-lng:-108.5506
-},
-
-{
-name:"Durango",
-lat:37.2753,
-lng:-107.8801
-},
-
-{
-name:"Fort Collins",
-lat:40.5853,
-lng:-105.0844
-},
-
-{
-name:"Leadville",
-lat:39.2508,
-lng:-106.2925
-}
+{name:"Colorado Springs",lat:38.8339,lng:-104.8214},
+{name:"Manitou Springs",lat:38.8570,lng:-104.9130},
+{name:"Denver",lat:39.7392,lng:-104.9903},
+{name:"Pueblo",lat:38.2544,lng:-104.6091},
+{name:"Canon City",lat:38.4494,lng:-105.2253},
+{name:"Cripple Creek",lat:38.7469,lng:-105.1786},
+{name:"Woodland Park",lat:38.9939,lng:-105.0569},
+{name:"Monument",lat:39.0917,lng:-104.8728},
+{name:"Castle Rock",lat:39.3722,lng:-104.8561},
+{name:"Leadville",lat:39.2508,lng:-106.2925},
+{name:"Aspen",lat:39.1911,lng:-106.8175},
+{name:"Vail",lat:39.6403,lng:-106.3742},
+{name:"Breckenridge",lat:39.4817,lng:-106.0384},
+{name:"Frisco",lat:39.5744,lng:-106.0975},
+{name:"Silverthorne",lat:39.6328,lng:-106.0747},
+{name:"Georgetown",lat:39.7061,lng:-105.6975},
+{name:"Idaho Springs",lat:39.7425,lng:-105.5136},
+{name:"Black Hawk",lat:39.8019,lng:-105.4939},
+{name:"Central City",lat:39.8019,lng:-105.5147},
+{name:"Golden",lat:39.7555,lng:-105.2211},
+{name:"Boulder",lat:40.01499,lng:-105.2705},
+{name:"Longmont",lat:40.1672,lng:-105.1019},
+{name:"Louisville",lat:39.9778,lng:-105.1319},
+{name:"Lafayette",lat:39.9936,lng:-105.0897},
+{name:"Fort Collins",lat:40.5853,lng:-105.0844},
+{name:"Loveland",lat:40.3978,lng:-105.0749},
+{name:"Greeley",lat:40.4233,lng:-104.7091},
+{name:"Sterling",lat:40.6255,lng:-103.2077},
+{name:"Fort Morgan",lat:40.2503,lng:-103.8019},
+{name:"Burlington",lat:39.3061,lng:-102.2694},
+{name:"Limon",lat:39.2639,lng:-103.6927},
+{name:"Trinidad",lat:37.1695,lng:-104.5005},
+{name:"Walsenburg",lat:37.6256,lng:-104.7803},
+{name:"La Junta",lat:37.9850,lng:-103.5438},
+{name:"Lamar",lat:38.0872,lng:-102.6207},
+{name:"Rocky Ford",lat:38.0500,lng:-103.7219},
+{name:"Salida",lat:38.5347,lng:-105.9989},
+{name:"Buena Vista",lat:38.8422,lng:-106.1311},
+{name:"Alamosa",lat:37.4694,lng:-105.8700},
+{name:"Monte Vista",lat:37.5792,lng:-106.1481},
+{name:"Del Norte",lat:37.6781,lng:-106.3536},
+{name:"Durango",lat:37.2753,lng:-107.8801},
+{name:"Silverton",lat:37.8119,lng:-107.6645},
+{name:"Ouray",lat:38.0228,lng:-107.6714},
+{name:"Telluride",lat:37.9375,lng:-107.8123},
+{name:"Ridgway",lat:38.1519,lng:-107.7556},
+{name:"Montrose",lat:38.4783,lng:-107.8762},
+{name:"Delta",lat:38.7422,lng:-108.0689},
+{name:"Grand Junction",lat:39.0639,lng:-108.5506},
+{name:"Fruita",lat:39.1589,lng:-108.7287},
+{name:"Palisade",lat:39.1100,lng:-108.3506},
+{name:"Glenwood Springs",lat:39.5505,lng:-107.3248},
+{name:"Carbondale",lat:39.4022,lng:-107.2112},
+{name:"Steamboat Springs",lat:40.4849,lng:-106.8317},
+{name:"Craig",lat:40.5152,lng:-107.5464},
+{name:"Meeker",lat:40.0375,lng:-107.9131},
+{name:"Pagosa Springs",lat:37.2695,lng:-107.0098},
+{name:"Cortez",lat:37.3489,lng:-108.5859},
+{name:"Mancos",lat:37.3458,lng:-108.2895},
+{name:"Eads",lat:38.4800,lng:-102.7796},
+{name:"Yuma",lat:40.1222,lng:-102.7244},
+{name:"Holyoke",lat:40.5847,lng:-102.3021}
 
 ];
 
@@ -662,8 +660,12 @@ Search Records
 
 });
 
-});
+        </section>
 
+</div>
+
+</div>
+        
 </script>
 
 <script>
