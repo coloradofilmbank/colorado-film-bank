@@ -665,3 +665,8 @@ h2::after{
     transform:scale(1.02);
 }
 
+.nav-logo img{
+    height:60px;
+    width:auto;
+    display:block;
+}
