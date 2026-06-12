@@ -612,19 +612,16 @@ gap:15px;
 }
 
 .collections-row{
-display:flex;
-overflow:hidden;
-scroll-behavior:smooth;
-gap:20px;
-width:100%;
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:20px;
+    width:100%;
 }
 
 .collection-card{
-min-width:220px;
-padding:20px;
-text-align:center;
-text-decoration:none;
-color:inherit;
+    min-width:0;
+    width:100%;
+    padding:20px;
 }
 
 .arrow{
@@ -652,7 +649,8 @@ align-items:start;
 }
 
 .timeline-column{
-width:100%;
+    width:100%;
+    max-width:none;
 }
 
 .map-column{
