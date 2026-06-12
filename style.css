@@ -527,7 +527,7 @@ color:white;
 }
 
 #archive-map{
-height:450px;
+height:600px;
 width:100%;
 border-radius:12px;
 overflow:hidden;
@@ -612,10 +612,11 @@ gap:15px;
 }
 
 .collections-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    overflow:visible;
+display:flex;
+overflow:hidden;
+scroll-behavior:smooth;
+gap:20px;
+width:100%;
 }
 
 .collection-card{
@@ -643,19 +644,17 @@ background:#a88439;
 }
 
 .explorer-layout{
-    display:flex;
-    gap:30px;
-    align-items:flex-start;
+display:grid;
+grid-template-columns:65% 35%;
+gap:30px;
+padding:50px 5%;
+align-items:start;
 }
 
 .timeline-column{
-    flex:1;
+width:100%;
 }
 
 .map-column{
-    flex:1;
-}
-
-.timeline-section{
-    margin-bottom:30px;
+width:100%;
 }
