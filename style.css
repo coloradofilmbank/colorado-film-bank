@@ -643,16 +643,3 @@ flex-shrink:0;
 .arrow:hover{
 background:#a88439;
 }
-
-.site-logo{
-    position:absolute;
-    top:20px;
-    left:20px;
-    z-index:1000;
-}
-
-.site-logo img{
-    width:180px;
-    height:auto;
-    display:block;
-}
