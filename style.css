@@ -65,7 +65,7 @@ body{
 }
 
 .hero-content h1{
-font-size:96px;
+font-size:72px;
 max-width:1000px;
 line-height:1.05;
 }
@@ -643,3 +643,25 @@ flex-shrink:0;
 .arrow:hover{
 background:#a88439;
 }
+
+h2::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:3px;
+    background:#a88439;
+    margin-top:12px;
+}
+
+.collection-card{
+    border:1px solid rgba(0,0,0,.08);
+}
+
+.featured-image img{
+    transition:.4s;
+}
+
+.featured-image img:hover{
+    transform:scale(1.02);
+}
+
