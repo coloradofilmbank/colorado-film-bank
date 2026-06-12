@@ -17,9 +17,7 @@ src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
 </script>
 
 </head>
-    
-
-    
+     
 <body>
 
     <nav class="topnav">
@@ -60,17 +58,19 @@ placeholder="Search collections, locations, films, photographs...">
 
     </header>
 
-<section>
+    <div class="explorer-layout">
+
+<div class="timeline-column">
 
 <h2>Explore Collections</h2>
 
 <div class="carousel-wrapper">
 
-<button class="arrow left" onclick="scrollCollections(-1)">
-❮
-</button>
+    <button class="arrow left" onclick="scrollCollections(-1)">
+        ❮
+    </button>
 
-<div class="collections-row" id="collectionsRow">
+    <div class="collections-row" id="collectionsRow">
 
 <a href="search.html?q=Stan Brakhage" class="card collection-card">
 <img src="IMG_7232.JPG">
@@ -312,20 +312,14 @@ placeholder="Search collections, locations, films, photographs...">
 <p>6 records</p>
 </a>
 
+    </div>
+
+    <button class="arrow right" onclick="scrollCollections(1)">
+        ❯
+    </button>
+
 </div>
-
-<button class="arrow right" onclick="scrollCollections(1)">
-❯
-</button>
-
-</div>
-
-</section>
-
-    <div class="explorer-layout">
-
-<div class="timeline-column">
-
+    
 <section class="timeline-section">
 
     <div class="section-title">
@@ -537,7 +531,6 @@ film, photography, and archival collections.
 </p>
 
 </footer>
-    </section>
 
 </div>
 
