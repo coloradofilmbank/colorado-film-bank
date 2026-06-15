@@ -10,7 +10,7 @@
 }
 
 body{
-    font-family:Georgia,"Times New Roman",serif;
+    font-family:Baskerville,"Baskerville Old Face","Hoefler Text",Georgia,serif;
     background:#f4f1e8;
     color:#1d1d1d;
     line-height:1.6;
@@ -613,21 +613,20 @@ gap:15px;
 }
 
 .collections-row{
-display:flex;
-overflow:hidden;
-scroll-behavior:smooth;
-gap:20px;
-width:100%;
+    display:flex;
+    overflow:hidden;
+    gap:20px;
+    width:100%;
 }
 
 .collection-card{
-flex:0 0 calc(20% - 16px);
-min-width:220px;
+    flex:0 0 calc((100% - 80px) / 5);
+    min-width:0;
 }
 
 .arrow{
-width:50px;
-height:50px;
+width:40px;
+height:40px;
 border:none;
 border-radius:50%;
 background:#14233a;
