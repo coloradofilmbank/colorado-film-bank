@@ -684,3 +684,7 @@ transform:scale(1.05);
 background:#d1b16d;
 height:2px;
 }
+
+html{
+    scroll-behavior:smooth;
+}
