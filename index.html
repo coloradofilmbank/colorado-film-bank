@@ -571,5 +571,48 @@ behavior:'smooth'
     
 <script src="script.js"></script>
 
+    <script>
+
+fetch("catalog.json")
+.then(r => r.json())
+.then(data => {
+
+const collections = {};
+
+data.forEach(record => {
+
+const name = (record["COLLECTION"] || "").trim();
+
+if(!name) return;
+
+collections[name] = (collections[name] || 0) + 1;
+
+});
+
+const sorted = Object.entries(collections)
+.sort((a,b) => b[1] - a[1]);
+
+const container =
+document.getElementById("autoCollections");
+
+container.innerHTML = sorted.map(([name,count]) => `
+
+<a href="search.html?q=${encodeURIComponent(name)}"
+class="card collection-card">
+
+<img src="IMG_7232.JPG" alt="${name}">
+
+<h3>${name}</h3>
+
+<p>${count} records</p>
+
+</a>
+
+`).join("");
+
+});
+
+</script>
+
 </body>
 </html>
