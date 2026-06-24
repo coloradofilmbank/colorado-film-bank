@@ -582,7 +582,9 @@ const collections = {};
 
 data.forEach(record => {
 
-const name = (record["COLLECTION"] || "").trim();
+const name = (record["COLLECTION"] || "")
+.trim()
+.toUpperCase();
 
 if(!name) return;
 
