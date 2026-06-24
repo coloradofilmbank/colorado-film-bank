@@ -61,6 +61,11 @@ const params=new URLSearchParams(window.location.search);
 
 const q=(params.get("q")||"").toLowerCase();
 
+    document.body.insertAdjacentHTML(
+  "afterbegin",
+  `<p style="background:yellow;padding:10px">Searching for: ${q}</p>`
+);
+
 fetch("catalog.json")
 .then(r=>r.json())
 .then(data=>{
