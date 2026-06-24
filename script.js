@@ -112,8 +112,11 @@ parseInt(slider.value);
 const matches =
 records.filter(record => {
 
+const title =
+record["TITLE OF MEDIA"] || "";
+
 const match =
-record.title.match(/\b(18|19|20)\d{2}\b/);
+title.match(/\b(18|19|20)\d{2}\b/);
 
 if(!match) return false;
 
@@ -128,10 +131,8 @@ matches.forEach(record => {
 
 results.innerHTML += `
 <div class="timeline-result">
-<a href="${record.url}">
-<h3>${record.title}</h3>
-</a>
-<p>${record.collection}</p>
+<h3>${record["TITLE OF MEDIA"] || ""}</h3>
+<p>${record["COLLECTION"] || ""}</p>
 </div>
 `;
 
