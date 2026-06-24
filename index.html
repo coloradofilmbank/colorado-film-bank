@@ -518,10 +518,13 @@ fetch('catalog.json')
 
 locations.forEach(location => {
 
-const count = records.filter(record =>
-record.title.toLowerCase()
-.includes(location.name.toLowerCase())
-).length;
+const count = records.filter(record => {
+
+const text = JSON.stringify(record).toLowerCase();
+
+return text.includes(location.name.toLowerCase());
+
+}).length;
 
 const marker = L.marker([
 location.lat,
