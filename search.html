@@ -65,19 +65,12 @@ fetch("catalog.json")
 .then(r=>r.json())
 .then(data=>{
 
-const matches=data.filter(item=>{
-
-return (
-(item.title||"").toLowerCase().includes(q)
-||
-(item.collection||"").toLowerCase().includes(q)
-||
-(item.location||"").toLowerCase().includes(q)
-||
-(item.comments||"").toLowerCase().includes(q)
+const matches = data.filter(item =>
+    Object.values(item)
+      .join(" ")
+      .toLowerCase()
+      .includes(q)
 );
-
-});
 
 const container=document.getElementById("results");
 
@@ -93,14 +86,14 @@ container.innerHTML=matches.map(item=>`
 
 <div class="card">
 
-<h2>${item.title||""}</h2>
+<h2>${item["TITLE OF MEDIA"]||""}</h2>
 
 <div class="meta">
-Collection: ${item.collection||""}
+Collection: ${item["COLLECTION"]||""}
 </div>
 
 <div class="meta">
-Location: ${item.location||""}
+Location: ${item["LOCATION"]||""}
 </div>
 
 <a href="record.html?id=${item.id}">
