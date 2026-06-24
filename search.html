@@ -61,9 +61,19 @@ const params=new URLSearchParams(window.location.search);
 
 const q=(params.get("q")||"").toLowerCase();
 
-    document.body.insertAdjacentHTML(
-  "afterbegin",
-  `<p style="background:yellow;padding:10px">Searching for: ${q}</p>`
+  document.body.insertAdjacentHTML(
+"afterbegin",
+`
+<div style="
+background:#14233a;
+color:white;
+padding:15px 30px;
+font-size:20px;
+text-align:center;
+">
+Archive Search: "${q}"
+</div>
+`
 );
 
 fetch("catalog.json")
@@ -77,9 +87,6 @@ const text = JSON.stringify(item).toLowerCase();
 return text.includes(q);
 
 });
-
-    console.log(data[0]);
-console.log(matches.length);
 
 const container=document.getElementById("results");
 
