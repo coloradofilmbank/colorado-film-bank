@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Colorado Film Bank Record</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.record{
+max-width:1000px;
+margin:auto;
+padding:60px;
+}
+
+.metadata{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.metadata p{
+margin-bottom:12px;
+}
+
+.label{
+font-weight:bold;
+color:#14233a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="record">
+
+<a href="javascript:history.back()">← Back to Results</a>
+
+<h1 id="title">Loading...</h1>
+
+<div class="metadata" id="metadata"></div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get("id"));
+
+fetch("catalog.json")
+.then(r => r.json())
+.then(data => {
+
+const record = data.find(item => item.id === id);
+
+if(!record){
+
+document.getElementById("title").textContent =
+"Record Not Found";
+
+return;
+
+}
+
+document.getElementById("title").textContent =
+record["TITLE OF MEDIA"] || "Untitled";
+
+const metadata = document.getElementById("metadata");
+
+metadata.innerHTML = Object.entries(record)
+.map(([key,value]) => `
+<p>
+<span class="label">${key}:</span>
+${value || ""}
+</p>
+`)
+.join("");
+
+});
+
+</script>
+
+</body>
+</html>
