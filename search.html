@@ -70,12 +70,16 @@ fetch("catalog.json")
 .then(r=>r.json())
 .then(data=>{
 
-const matches = data.filter(item =>
-    Object.values(item)
-      .join(" ")
-      .toLowerCase()
-      .includes(q)
-);
+const matches = data.filter(item => {
+
+const text = JSON.stringify(item).toLowerCase();
+
+return text.includes(q);
+
+});
+
+    console.log(data[0]);
+console.log(matches.length);
 
 const container=document.getElementById("results");
 
