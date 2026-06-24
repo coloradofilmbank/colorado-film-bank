@@ -526,6 +526,8 @@ return text.includes(location.name.toLowerCase());
 
 }).length;
 
+if(count > 0){
+
 const marker = L.marker([
 location.lat,
 location.lng
@@ -541,7 +543,7 @@ Search Records
 </a>
 `);
 
-});
+}
 
 });
 
