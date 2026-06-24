@@ -688,3 +688,16 @@ height:2px;
 html{
     scroll-behavior:smooth;
 }
+
+.nav-logo a{
+    display:block;
+}
+
+.nav-logo img{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nav-logo img:hover{
+    opacity:.85;
+}
