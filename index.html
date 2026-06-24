@@ -288,10 +288,6 @@ placeholder="Search collections, locations, films, photographs...">
 
 </div>
 
-             <h2>All Collections</h2>
-
-<div class="all-collections-grid" id="autoCollections"></div>
-
             <script>
 document.getElementById("autoCollections").innerHTML =
 "<h3>TEST</h3>";
@@ -598,9 +594,9 @@ const sorted = Object.entries(collections)
 .sort((a,b) => b[1] - a[1]);
 
 const container =
-document.getElementById("autoCollections");
-
-container.innerHTML = sorted.map(([name,count]) => `
+document.getElementById("collectionsRow");
+    
+container.innerHTML += sorted.map(([name,count]) => `
 
 <a href="search.html?q=${encodeURIComponent(name)}"
 class="card collection-card">
