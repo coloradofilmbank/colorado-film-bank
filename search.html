@@ -90,11 +90,16 @@ fetch("catalog.json")
 .then(r=>r.json())
 .then(data=>{
 
-const matches = data.filter(item => {
+const matches = data
+.map((item,index) => ({
+    ...item,
+    id:index
+}))
+.filter(item => {
 
-const text = JSON.stringify(item).toLowerCase();
+    const text = JSON.stringify(item).toLowerCase();
 
-return text.includes(q);
+    return text.includes(q);
 
 });
 
@@ -122,7 +127,7 @@ Collection: ${item["COLLECTION"]||""}
 Location: ${item["LOCATION"]||""}
 </div>
 
-<a href="record.html?id=${index}">
+<a href="record.html?id=${item.id}">
 View Record
 </a>
 
@@ -131,7 +136,7 @@ View Record
 `).join("");
 
 });
-
+  
 </script>
 
 </body>
