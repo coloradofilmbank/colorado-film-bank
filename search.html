@@ -108,7 +108,7 @@ return;
 
 }
 
-container.innerHTML=matches.map(item=>`
+container.innerHTML=matches.map((item,index)=>``
 
 <div class="card">
 
@@ -122,7 +122,7 @@ Collection: ${item["COLLECTION"]||""}
 Location: ${item["LOCATION"]||""}
 </div>
 
-<a href="record.html?id=${item.id}">
+<a href="record.html?id=${index}">
 View Record
 </a>
 
